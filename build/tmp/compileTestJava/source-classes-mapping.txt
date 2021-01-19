@@ -1,0 +1,2 @@
+com/damian/Blog2/Blog2ApplicationTests.java
+ com.damian.Blog2.Blog2ApplicationTests

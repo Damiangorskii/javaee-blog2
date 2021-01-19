@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Blog App v.2</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" th:href="@{/}" class="brand-logo">Home</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a th:href="@{/post/posts}">Posts</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/logout">Logout</a></li>
+            <li style="color: black;" sec:authorize="isAuthenticated()">Wellcome, <span sec:authentication="name"></span></li>
+            <li sec:authorize="!isAuthenticated()"><a href="/login">Login</a></li>
+            <li sec:authorize="!isFullyAuthenticated()"><a href="/registration">Register</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+            <li><a th:href="@{/post/posts}">Posts</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/logout">Logout</a></li>
+            <li style="color: black;" sec:authorize="isAuthenticated()">Wellcome, <span sec:authentication="name"></span></li>
+            <li sec:authorize="!isAuthenticated()"><a href="/login">Login</a></li>
+            <li sec:authorize="!isFullyAuthenticated()"><a href="/registration">Register</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+
+
+<div class="container">
+    <div class="section">
+
+        <h4>Posts</h4>
+        <br>
+
+
+            <a th:href="@{/post/create}" sec:authorize="isAuthenticated()"><button class="btn waves-effect waves-light">Add new post
+                <i class="material-icons right">add</i>
+            </button></a>
+        <br><br>
+
+        <th:block th:each="post : ${posts}">
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="postTitle" th:each="a, iterStart : ${post.authors}" th:text="${!iterStart.last} ? ${a.getName()} + ', ' : ${a.getName()}"></span>
+                            <p th:text="${post.postContent}"></p>
+                            <br>
+                            Tags: <span th:each="a, iterStart : ${post.tags}" th:text="${!iterStart.last} ? ${a.getTag()} + ', ' : ${a.getTag()}"></span>
+                        </div>
+                        <div class="card-action">
+                            <a th:href="@{/post/detail/{id}(id=${post.getId()})}">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </th:block>
+
+
+    </div>
+</div>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/js/materialize.js"></script>
+<script src="/js/init.js"></script>
+
+</body>
+</html>

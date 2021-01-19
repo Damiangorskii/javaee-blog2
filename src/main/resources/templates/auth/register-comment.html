@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Blog App v.2</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+<div class="row center">
+    <h3>If you don't want to create an account just click the link below</h3>
+    <h4><a th:href="@{/}">home</a></h4>
+</div>
+
+<div class="container">
+    <div class="section">
+
+        <form th:action="@{/register}" method="post" th:object="${user}">
+
+            <div th:if="${#fields.hasErrors()}">
+                  <span class="validationError">
+                     Please correct the problems below and resubmit.
+                  </span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="password">Password</label> <input
+                    id="password" class="form-control" type="password"
+                    th:field="*{password}" required autofocus="autofocus" />
+            </div>
+            <span class="validationError" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Name Error</span>
+
+            <div class="form-group">
+                <label class="control-label" for="email">Email</label> <input
+                    id="email" class="form-control" type="email"
+                    th:field="*{email}" required autofocus="autofocus" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Register</button>
+                <span>Already registered? <a href="/" th:href="@{/login}">Login here</a></span>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+
+</body>
+</html>

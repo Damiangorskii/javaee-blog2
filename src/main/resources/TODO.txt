@@ -1,0 +1,11 @@
+2.Dodanie autora poprzez wyszukanie istniejących lub poprzez listę. (bez listy ale działa)
+3.Możliwość dodania tagu do postu lub korzystania z istniejących (poprzez wyszukiwanie czy listę). (bez listy, ale działa)
+8.Wyświetlenie wszystkich postów nie wymagających logowania przez użytkownika wraz z sortowaniem pól (bez sortowania)
+9.Importowanie oraz eksportowanie danych z pliku .csv z poziomu administratora
+
+
+
+6.Deploy aplikacji na serwer zewnętrzny (na przykład w serwisie Heroku).
+
+
+

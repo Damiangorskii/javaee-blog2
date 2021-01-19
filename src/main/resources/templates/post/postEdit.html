@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Blog App v.2</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" th:href="@{/}" class="brand-logo">Home</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a th:href="@{/post/posts}">Posts</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/logout">Logout</a></li>
+            <li style="color: black;" sec:authorize="isAuthenticated()">Wellcome, <span sec:authentication="name"></span></li>
+            <li sec:authorize="!isAuthenticated()"><a href="/login">Login</a></li>
+            <li sec:authorize="!isFullyAuthenticated()"><a href="/registration">Register</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+            <li><a th:href="@{/post/posts}">Posts</a></li>
+            <li sec:authorize="isAuthenticated()"><a href="/logout">Logout</a></li>
+            <li style="color: black;" sec:authorize="isAuthenticated()">Wellcome, <span sec:authentication="name"></span></li>
+            <li sec:authorize="!isAuthenticated()"><a href="/login">Login</a></li>
+            <li sec:authorize="!isFullyAuthenticated()"><a href="/registration">Register</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+
+
+<div class="container">
+    <div class="section">
+
+        <h4>Edit post</h4>
+        <br><br>
+
+
+        <form class="col s12" method="POST" th:action="@{/post/edit/} + ${id}" th:object="${post}">
+
+            <div th:if="${#fields.hasErrors()}">
+                  <span class="validationError">
+                     Please correct the problems below and resubmit.
+                  </span>
+            </div>
+
+
+            <div class="input-field col s6">
+                <input id="authors" class="validate" th:field="*{authors}">
+                <label for="authors">Authors:</label>
+            </div>
+            <span class="validationError" th:if="${#fields.hasErrors('authors')}" th:errors="*{authors}">Name Error</span>
+
+            <br><br>
+
+            <div class="input-field col s6">
+                <input id="content" class="validate" th:field="*{postContent}">
+                <label for="content">Content:</label>
+            </div>
+            <span class="validationError" th:if="${#fields.hasErrors('postContent')}" th:errors="*{postContent}">Name Error</span>
+
+            <br><br>
+
+            <div class="input-field col s6">
+                <input id="tags" class="validate" th:field="*{tags}">
+                <label for="tags">Tags:</label>
+            </div>
+            <span class="validationError" th:if="${#fields.hasErrors('tags')}" th:errors="*{tags}">Name Error</span>
+
+            <br><br>
+
+            <button class="btn waves-effect waves-light" type="submit" value="Submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+
+
+        </form>
+
+
+    </div>
+</div>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/js/materialize.js"></script>
+<script src="/js/init.js"></script>
+
+</body>
+</html>
