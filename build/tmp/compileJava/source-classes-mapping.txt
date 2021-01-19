@@ -16,16 +16,16 @@ com/damian/Blog2/Controller/error/ErrorController.java
  com.damian.Blog2.Controller.error.ErrorController
 com/damian/Blog2/Validator/Post/PostContent.java
  com.damian.Blog2.Validator.Post.PostContent
-com/damian/Blog2/Models/Post.java
- com.damian.Blog2.Models.Post
+com/damian/Blog2/Controller/web/HomeController.java
+ com.damian.Blog2.Controller.web.HomeController
 com/damian/Blog2/Validator/Post/AuthorsValidator.java
  com.damian.Blog2.Validator.Post.AuthorsValidator
 com/damian/Blog2/Validator/Post/Authors.java
  com.damian.Blog2.Validator.Post.Authors
 com/damian/Blog2/Service/CommentService.java
  com.damian.Blog2.Service.CommentService
-com/damian/Blog2/Repository/TagRepository.java
- com.damian.Blog2.Repository.TagRepository
+com/damian/Blog2/Validator/User/UsernameValidator.java
+ com.damian.Blog2.Validator.User.UsernameValidator
 com/damian/Blog2/Repository/AuthorRepository.java
  com.damian.Blog2.Repository.AuthorRepository
 com/damian/Blog2/Validator/Post/TagsValidator.java
@@ -34,8 +34,8 @@ com/damian/Blog2/Service/PostService.java
  com.damian.Blog2.Service.PostService
 com/damian/Blog2/Validator/User/Password.java
  com.damian.Blog2.Validator.User.Password
-com/damian/Blog2/Service/EmailSender.java
- com.damian.Blog2.Service.EmailSender
+com/damian/Blog2/Blog2Application.java
+ com.damian.Blog2.Blog2Application
 com/damian/Blog2/Repository/UserRepository.java
  com.damian.Blog2.Repository.UserRepository
 com/damian/Blog2/Parser/ParserComment.java
@@ -44,10 +44,10 @@ com/damian/Blog2/Service/TagService.java
  com.damian.Blog2.Service.TagService
 com/damian/Blog2/Controller/web/CommentController.java
  com.damian.Blog2.Controller.web.CommentController
-com/damian/Blog2/Error/CustomAccessDeniedHandler.java
- com.damian.Blog2.Error.CustomAccessDeniedHandler
-com/damian/Blog2/Models/Comment.java
- com.damian.Blog2.Models.Comment
+com/damian/Blog2/Service/MyUserDetailService.java
+ com.damian.Blog2.Service.MyUserDetailService
+com/damian/Blog2/Validator/User/Username.java
+ com.damian.Blog2.Validator.User.Username
 com/damian/Blog2/Models/Tag.java
  com.damian.Blog2.Models.Tag
 com/damian/Blog2/Validator/User/Email.java
@@ -56,31 +56,31 @@ com/damian/Blog2/Validator/User/PasswordValidator.java
  com.damian.Blog2.Validator.User.PasswordValidator
 com/damian/Blog2/Validator/Comment/CommentContentValidator.java
  com.damian.Blog2.Validator.Comment.CommentContentValidator
-com/damian/Blog2/Config/SecurityConfiguration.java
- com.damian.Blog2.Config.SecurityConfiguration
-com/damian/Blog2/Repository/CommentRepository.java
- com.damian.Blog2.Repository.CommentRepository
+com/damian/Blog2/Validator/User/EmailValidator.java
+ com.damian.Blog2.Validator.User.EmailValidator
+com/damian/Blog2/Service/SecurityService.java
+ com.damian.Blog2.Service.SecurityService
 com/damian/Blog2/Models/Author.java
  com.damian.Blog2.Models.Author
 com/damian/Blog2/Validator/Comment/CommentContent.java
  com.damian.Blog2.Validator.Comment.CommentContent
 com/damian/Blog2/Models/CommentCSV.java
  com.damian.Blog2.Models.CommentCSV
-com/damian/Blog2/Service/MyUserDetailService.java
- com.damian.Blog2.Service.MyUserDetailService
-com/damian/Blog2/Validator/User/Username.java
- com.damian.Blog2.Validator.User.Username
-com/damian/Blog2/Validator/User/UsernameValidator.java
- com.damian.Blog2.Validator.User.UsernameValidator
+com/damian/Blog2/Models/Post.java
+ com.damian.Blog2.Models.Post
+com/damian/Blog2/Service/EmailSender.java
+ com.damian.Blog2.Service.EmailSender
 com/damian/Blog2/Models/MyUserDetail.java
  com.damian.Blog2.Models.MyUserDetail
+com/damian/Blog2/Config/SecurityConfiguration.java
+ com.damian.Blog2.Config.SecurityConfiguration
 com/damian/Blog2/Models/User.java
  com.damian.Blog2.Models.User
-com/damian/Blog2/Validator/User/EmailValidator.java
- com.damian.Blog2.Validator.User.EmailValidator
-com/damian/Blog2/Service/SecurityService.java
- com.damian.Blog2.Service.SecurityService
-com/damian/Blog2/Blog2Application.java
- com.damian.Blog2.Blog2Application
-com/damian/Blog2/Controller/web/HomeController.java
- com.damian.Blog2.Controller.web.HomeController
+com/damian/Blog2/Repository/TagRepository.java
+ com.damian.Blog2.Repository.TagRepository
+com/damian/Blog2/Repository/CommentRepository.java
+ com.damian.Blog2.Repository.CommentRepository
+com/damian/Blog2/Models/Comment.java
+ com.damian.Blog2.Models.Comment
+com/damian/Blog2/Error/CustomAccessDeniedHandler.java
+ com.damian.Blog2.Error.CustomAccessDeniedHandler
